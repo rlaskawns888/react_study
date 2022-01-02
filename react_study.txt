@@ -1,0 +1,13 @@
+# 01 리액트설치하기
+- https://www.youtube.com/watch?v=y4Pd3M1ZIXk&list=PLB7CpjPWqHOuf62H44TMkMIsqfkIzcEcX
+- Node 설치가 되어있어야함.
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+
+
+# 02 폴더구조 & 컴포넌트 소개 
+- https://www.youtube.com/watch?v=AODd4CjE1h8&list=PLB7CpjPWqHOuf62H44TMkMIsqfkIzcEcX&index=2
+
