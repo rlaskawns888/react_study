@@ -8,7 +8,7 @@ npm start
 
 
 
-# 02 폴더구조 & 컴포넌트 소개 
+# 02 폴더구조 & 컴포넌트 소개
 - https://www.youtube.com/watch?v=AODd4CjE1h8&list=PLB7CpjPWqHOuf62H44TMkMIsqfkIzcEcX&index=2
 
 
@@ -16,3 +16,7 @@ npm start
 
 --
 https://ko.reactjs.org/docs/state-and-lifecycle.html / 5. State와 생명주기
+
+
+
+-- 2022.01.09 03 이벤트 핸들링 강의 들음 : https://youtu.be/AJ_yDXBSkdw
