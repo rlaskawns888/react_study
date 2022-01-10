@@ -19,4 +19,6 @@ https://ko.reactjs.org/docs/state-and-lifecycle.html / 5. State와 생명주기
 
 
 
--- 2022.01.09 03 이벤트 핸들링 강의 들음 : https://youtu.be/AJ_yDXBSkdw
+-- (코지코더) 2022.01.09 03 이벤트 핸들링 강의 들음 : https://youtu.be/AJ_yDXBSkdw
+
+-- (코지코더) 2022.01.10 04. 리액트 훅스 useState : https://www.youtube.com/watch?v=GVEP1uIWQuk&list=PLB7CpjPWqHOuf62H44TMkMIsqfkIzcEcX&index=4

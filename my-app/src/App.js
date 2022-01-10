@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 // function App() {
 //   return (
@@ -23,6 +24,8 @@ import './App.css';
 // }
 
 function App() {
+  const [text, setText] = useState('update Text 0');
+
   const onSubmit = () => {
     console.log('onSubmit function call');
   };
@@ -35,6 +38,12 @@ function App() {
     }
   };
 
+  // let text = "Hello World";
+
+  const updateText = () => {
+    setText('update Text 1');      
+  }
+
   return (
     <div className="App">
       {
@@ -44,8 +53,17 @@ function App() {
 
       // <button onClick={() => console.log('Hello World')}>Submit</button>
       }
+      
       <input type="text" onKeyUp={onKeyup}/>
+      
       <button onClick={onSubmit}>Submit</button>
+
+      <br/><br/>
+
+      <span>{text}</span>
+      <button onClick={updateText}>Update</button>
+
+
     </div>
   );
 }
