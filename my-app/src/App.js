@@ -1,4 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import Counter from './components/Counter';
+import Movie from './components/Movie';
+import MovieForm from './components/MovieForm';
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -44,7 +47,7 @@ import React, {useState, useEffect} from 'react';
 //   // let text = "Hello World";
 
 //   const updateText = () => {
-//     setText('update Text 1');      
+//     setText('update Text 1');
 //   }
 
 //   return (
@@ -56,9 +59,9 @@ import React, {useState, useEffect} from 'react';
 
 //       // <button onClick={() => console.log('Hello World')}>Submit</button>
 //       }
-      
+
 //       <input type="text" onKeyUp={onKeyup}/>
-      
+
 //       <button onClick={onSubmit}>Submit</button>
 
 //       <br/><br/>
@@ -72,7 +75,7 @@ import React, {useState, useEffect} from 'react';
 // }
 
 
-// 05. 폼에서 useState 
+// 05. 폼에서 useState
 // function App() {
 //   const [username, setUserName] = useState('');
 //   const [password, setPassword] = useState('');
@@ -81,7 +84,7 @@ import React, {useState, useEffect} from 'react';
 //     e.preventDefault();
 //     console.log(username, password);
 //   };
-  
+
 //   return (
 //     <div className="App">
 //       <form onSubmit={onSubmit}>
@@ -90,36 +93,112 @@ import React, {useState, useEffect} from 'react';
 //         <button type="submit">Submit</button>
 //       </form>
 //     </div>
-//   ); 
+//   );
 // }
 
 // 06.useEffect
+// function App() {
+//   const [count, setCount] = useState(0);
+//   const [temp, setTemp] = useState(0);
+//
+//   useEffect(() => {
+//     console.log('count ', count);
+//     console.log('temp ', temp);
+//   }, [count, temp]);
+//   // => count 만 변경될경우에만 useEffect가 동작되도록 설정.
+//   // => temp 만 변경될경우에만 useEffect가 동작되도록 설정.
+//
+//
+//   useEffect(() => {
+//     console.log('first rendering')
+//   }, []);
+//   // => [] 빈 배열을 넣어줄경우, 한번만 실행되어짐.
+//
+//   const increment = () => {
+//     setCount(count + 1);
+//   };
+//
+//   return (
+//     <div className="App">
+//       Hello World
+//       <button onClick={increment}>click</button>
+//       <button onClick={() => setTemp(temp + 1)}>click1</button>
+//     </div>
+//   );
+// }
+
+
+// 07, 08
+// function App() {
+//   const [buttonName, setButtonName] = useState('클릭');
+//
+//   const clickButton = () => {
+//     setButtonName('click');
+//   };
+//
+//   return (
+//     <div className="App">
+//       <Counter click="click1"/>
+//       <Counter click={buttonName}/>
+//       <Counter />
+//
+//       <button onClick={clickButton}>Click</button>
+//     </div>
+//   );
+// }
+
+
+// 09
+// function App() {
+//   const [condition, setCondition] = useState(false);
+//
+//   const Toggle = () => {
+//     setCondition(!condition);
+//   };
+//
+//   useEffect(() => {
+//     console.log(condition)
+//   }, [condition]);
+//
+//   const renderCondition = condition ? 'True' : 'False';
+//
+//   return (
+//     <div className="App">
+//       <div>{renderCondition}</div>
+//       <button onClick={Toggle}>Toggle Button</button>
+//     </div>
+//   );
+// }
+
+
+// 10, 11
 function App() {
-  const [count, setCount] = useState(0);
-  const [temp, setTemp] = useState(0);
+  const [movies, setMovies] = useState(
+    [
+      { title : 'movie 1 title', year : '2019' }
+      , { title : 'movie 2 title', year : '2020' }
+      , { title : 'movie 3 title', year : '2021' }
+    ]
+  );
 
-  useEffect(() => {
-    console.log('count ', count);
-    console.log('temp ', temp);
-  }, [count, temp]);
-  // => count 만 변경될경우에만 useEffect가 동작되도록 설정.
-  // => temp 만 변경될경우에만 useEffect가 동작되도록 설정.
+  const renderMovies = movies.map(item => {
+    return (
+      <Movie item={item} key={item.year}/>
+    );
+  });
 
-
-  useEffect(() => {
-    console.log('first rendering')
-  }, []);
-  // => [] 빈 배열을 넣어줄경우, 한번만 실행되어짐.
-
-  const increment = () => {
-    setCount(count + 1);
+  const addMovie = (movie) => {
+    setMovies([
+        ...movies
+        , movie
+    ]);
   };
 
   return (
     <div className="App">
-      Hello World
-      <button onClick={increment}>click</button>
-      <button onClick={() => setTemp(temp + 1)}>click1</button>
+      <h1>Movie List</h1>
+      {renderMovies}
+      <MovieForm addMovie={addMovie}/>
     </div>
   );
 }

@@ -26,3 +26,19 @@ https://ko.reactjs.org/docs/state-and-lifecycle.html / 5. State와 생명주기
 -- (코지코더) 2022.01.11 05. 폼에서 useState https://www.youtube.com/watch?v=UFtirvA6NDU&list=PLB7CpjPWqHOuf62H44TMkMIsqfkIzcEcX&index=5
 
 -- (코지코더) 2022.01.11 06.useEffect  / https://www.youtube.com/watch?v=pvTuVXlrGUY&list=PLB7CpjPWqHOuf62H44TMkMIsqfkIzcEcX&index=6
+
+-- (코지코더) 2022.01.22 07.컨포넌트 반복 제거 / https://www.youtube.com/watch?v=CzQonZ-Qo2I&list=PLB7CpjPWqHOuf62H44TMkMIsqfkIzcEcX&index=7
+
+-- (코지코더) 2022.01.22 08.자식컨포넌트에 데이터 넘기기 / https://www.youtube.com/watch?v=5y0UYsxRjx4&list=PLB7CpjPWqHOuf62H44TMkMIsqfkIzcEcX&index=8
+
+-- (코지코더) 2022.01.22 09.조건 렌더링
+
+-- (코지코더) 2022.01.22 10.리엑트 반복문
+
+-- (코지코더) 2022.01.22 11.컴포넌트와 props 데이터 보내기 복습
+
+-- (코지코더) 2022.01.22 12.영화 리스트 추가 폼 만들기
+
+-- (코지코더) 2022.01.22 13.영화 리스트 추가 폼 만들기2
+
+-- (코지코더) 2022.01.22 14.자식 컴포넌트에서 부모 컴포넌트 스테이트 변경하기
