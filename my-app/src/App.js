@@ -2,6 +2,13 @@ import React, {useState, useEffect} from 'react';
 import Counter from './components/Counter';
 import Movie from './components/Movie';
 import MovieForm from './components/MovieForm';
+import Navbar from './components/Navbar';
+
+import {
+  BrowserRouter
+  , Switch
+  , Route
+} from 'react-router-dom';
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -173,19 +180,19 @@ import MovieForm from './components/MovieForm';
 
 // 10, 11
 function App() {
-  const [movies, setMovies] = useState(
-    [
-      { title : 'movie 1 title', year : '2019' }
-      , { title : 'movie 2 title', year : '2020' }
-      , { title : 'movie 3 title', year : '2021' }
-    ]
-  );
+  const [movies, setMovies] = useState([]);
 
-  const renderMovies = movies.map(item => {
+  const removeMovie = (id) => {
+    setMovies(movies.filter(movie => {
+      return movie.id !== id;
+    }));
+  };
+
+  const renderMovies = movies.length ? movies.map(item => {
     return (
-      <Movie item={item} key={item.year}/>
+      <Movie item={item} key={item.id} removeMovie={removeMovie}/>
     );
-  });
+  }) : 'no data';
 
   const addMovie = (movie) => {
     setMovies([
@@ -195,11 +202,29 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Movie List</h1>
-      {renderMovies}
-      <MovieForm addMovie={addMovie}/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar/>
+
+        <Switch>
+          <Route path="/movies">
+            <h1>Movie List</h1>
+            {renderMovies}
+            <MovieForm addMovie={addMovie}/>
+          </Route>
+
+          <Route path="/users">
+            <div><h1>users</h1></div>
+          </Route>
+
+          <Route path="/" exact>
+            <div><h1>Home</h1></div>
+          </Route>
+        </Switch>
+
+      </div>
+
+    </BrowserRouter>
   );
 }
 
