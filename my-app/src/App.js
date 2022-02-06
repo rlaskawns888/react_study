@@ -4,6 +4,8 @@ import Movie from './components/Movie';
 import MovieForm from './components/MovieForm';
 import Navbar from './components/Navbar';
 
+import Users from './pages/Users';
+
 import {
   BrowserRouter
   , Switch
@@ -206,21 +208,23 @@ function App() {
       <div className="App">
         <Navbar/>
 
-        <Switch>
-          <Route path="/movies">
-            <h1>Movie List</h1>
-            {renderMovies}
-            <MovieForm addMovie={addMovie}/>
-          </Route>
+        <div className="container">
+          <Switch>
+            <Route path="/movies">
+              <h1>Movie List</h1>
+              {renderMovies}
+              <MovieForm addMovie={addMovie}/>
+            </Route>
 
-          <Route path="/users">
-            <div><h1>users</h1></div>
-          </Route>
+            <Route path="/users">
+              <Users />
+            </Route>
 
-          <Route path="/" exact>
-            <div><h1>Home</h1></div>
-          </Route>
-        </Switch>
+            <Route path="/" exact>
+              <div><h1>Home</h1></div>
+            </Route>
+          </Switch>
+        </div>
 
       </div>
 
